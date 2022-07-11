@@ -14,9 +14,9 @@
         </select>
       </div>
       <div class="input-container">
-        <label for="carne" disabled>Escolha a carne do seu Burger:</label>
+        <label for="carne">Escolha a carne do seu Burger:</label>
         <select name="carne" id="carne" v-model="carne">
-          <option value="">Selecione o tipo de carne</option>
+          <option value="" disabled>Selecione o tipo de carne</option>
           <option v-for="carne in carnes" :key="carne.id" :value="carne.tipo">{{ carne.tipo }}</option>
         </select>
       </div>
@@ -47,7 +47,6 @@ export default {
       pao: null,
       carne: null,
       opcionais: [],
-      status: "Solicitado",
       msg: null
     }
   },
@@ -59,33 +58,40 @@ export default {
       this.carnes = data.carnes
       this.opcionaisdata = data.opcionais
     },
-   /*  async createBurger(e) {
+    async createBurger(e) {
       e.preventDefault()
+
+      //Data -> será enviado ao servidor (API)
       const data = {
         nome: this.nome,
         carne: this.carne,
         pao: this.pao,
-        opcionais: Array.from(this.opcionais),
+        opcionais: Array.from(this.opcionais), //Enviando para o backend como Array
         status: "Solicitado"
       }
-      const dataJson = JSON.stringify(data)    
+
+      const dataJson = JSON.stringify(data)  
+
       const req = await fetch("http://localhost:3000/burgers", {
         method: "POST",
         headers: { "Content-Type" : "application/json" },
         body: dataJson
       });
+
       const res = await req.json()
       console.log(res)
-      this.msg = "Pedido realizado com sucesso!"
+
+     /*  this.msg = "Pedido realizado com sucesso!" */
+
       // clear message
-      setTimeout(() => this.msg = "", 3000)
+     /*  setTimeout(() => this.msg = "", 3000) */
+
       // limpar campos
       this.nome = ""
       this.carne = ""
       this.pao = ""
       this.opcionais = []
-      
-    } */
+    }
   },
   mounted () {
     this.getIngredientes()
