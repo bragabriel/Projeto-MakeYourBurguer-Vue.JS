@@ -17,8 +17,8 @@ npm install
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Execute our fake API
 
 ```sh
-npm run build
+npm run backend
 ```
