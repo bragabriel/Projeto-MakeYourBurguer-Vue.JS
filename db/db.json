@@ -124,6 +124,18 @@
       ],
       "status": "Solicitado",
       "id": 6
+    },
+    {
+      "nome": "Gabriel",
+      "carne": "Picanha",
+      "pao": "Parmesão e Orégano",
+      "opcionais": [
+        "Bacon",
+        "Cebola roxa",
+        "Tomate"
+      ],
+      "status": "Solicitado",
+      "id": 7
     }
   ]
 }
