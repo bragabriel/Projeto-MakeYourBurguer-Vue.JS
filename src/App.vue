@@ -33,9 +33,18 @@ export default{
     box-sizing: border-box;
   }
 
+  html{
+    min-height: 1080px;
+  }
+
   .main-container{
     margin:50px;
     min-height: 250px;
+  }
+
+  body{
+    display: flex;
+    flex-direction: column;
   }
 
   h1{

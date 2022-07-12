@@ -1,5 +1,6 @@
 <template>
-    <div class="burger-table" v-if="burguers">
+    <div class="burger-table">
+        <Message :msg="msg" v-show="msg" />
         <div>
             <div id="burger-table-heading">
                 <div class="order-id">#:</div>
@@ -32,20 +33,23 @@
             </div>
         </div>
     </div>
-    <div v-else>
-        <h2>Não há pedidos no momento!</h2>
-    </div>
 </template>
 
 <script>
+import Message from './Message.vue'
+
     export default {
         name: "Dashboard",
         data() {
             return {
                 burgers: null,
                 burger_id: null,
-                status: []
+                status: [],
+                msg: null
             }
+        },
+        components: {
+            Message
         },
         methods: {
             async getPedidos() {
@@ -65,14 +69,24 @@
                 const req = await fetch(`http://localhost:3000/burgers/${id}`, {
                     method: "DELETE"
                 });
+
                 const res = await req.json()
+
+                // Mensagem do sistema:
+                this.msg = `Pedido removido com sucesso!`
+
+                // Clear message
+                setTimeout(() => this.msg = "", 3000)
+
                 this.getPedidos()
             },
             async updateBurger(event, id) {
                 const option = event.target.value;
+
                 const dataJson = JSON.stringify({
                     status: option
                 });
+
                 const req = await fetch(`http://localhost:3000/burgers/${id}`, {
                     method: "PATCH",
                     headers: {
@@ -80,7 +94,14 @@
                     },
                     body: dataJson
                 });
+
                 const res = await req.json()
+
+                // Mensagem do sistema:
+                this.msg = `O pedido N° ${res.id} foi atualizado para ${res.status}!`
+
+                // Clear message
+                setTimeout(() => this.msg = "", 3000)
                 console.log(res)
             }
         },
@@ -91,9 +112,10 @@
 </script>
 
 <style scoped>
-    #burger-table {
+    .burger-table {
         max-width: 1200px;
         margin: 0 auto;
+        height: auto;
     }
 
     #burger-table-heading,
@@ -146,4 +168,6 @@
         background-color: transparent;
         color: #222;
     }
+
+
 </style>
