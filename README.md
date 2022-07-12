@@ -8,7 +8,7 @@
 
 ### Foi utilizado conhecimentos em Components, Views, Rotas e Integração com BackEnd através de uma fake API.<br><br>
 
-### Preview do Projeto
+### Preview do Projeto:
 <p align="center">
     <img width="1000" height="500" src="https://github.com/bragabriel/Projeto-MakeYourBurguer-Vue.JS/blob/main/public/video/burgerApp.gif">
 </p>
