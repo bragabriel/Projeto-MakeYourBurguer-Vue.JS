@@ -10,6 +10,12 @@
 
 [![Preview do Projeto](miniatura)](https://github.com/bragabriel/Projeto-MakeYourBurguer-Vue.JS/blob/main/public/video/burgerApp.gif "texto") 
 
+<p align="center">
+    <img width="1000" height="800" src="https://github.com/bragabriel/Projeto-MakeYourBurguer-Vue.JS/blob/main/public/video/burgerApp.gif">
+</p>
+
+
+
 <hr></hr>
 
 ## Vue-project - Project Setup
