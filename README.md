@@ -8,7 +8,8 @@
 
 ### Foi utilizado conhecimentos em Components, Views, Rotas e Integração com BackEnd através de uma fake API.<br><br>
 
- 
+[![Preview do Projeto](miniatura)](https://github.com/bragabriel/Projeto-MakeYourBurguer-Vue.JS/blob/main/public/video/burgerApp.gif "texto") 
+
 <hr></hr>
 
 ## Vue-project - Project Setup
