@@ -16,7 +16,7 @@
       <div class="input-container">
         <label for="carne">Escolha a carne do seu Burger:</label>
         <select name="carne" id="carne" v-model="carne">
-          <option value="" disabled>Selecione o tipo de carne</option>
+          <option value="" disabled selected>Selecione o tipo de carne</option>
           <option v-for="carne in carnes" :key="carne.id" :value="carne.tipo">{{ carne.tipo }}</option>
         </select>
       </div>
@@ -109,6 +109,10 @@ export default {
   #burger-form {
     max-width: 400px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
   }
   .input-container {
     display: flex;
@@ -129,6 +133,7 @@ export default {
   #opcionais-container {
     flex-direction: row;
     flex-wrap: wrap;
+    width: 300px;
   }
   #opcionais-title {
     width: 100%;
